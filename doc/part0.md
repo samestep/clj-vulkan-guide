@@ -1,4 +1,4 @@
-# 0: Setup
+# Part 0: Setup
 
 ## Hardware
 
