@@ -91,9 +91,9 @@ java -cp lwjgl3-demos.jar org.lwjgl.demo.vulkan.InstancedSpheresDemo
 You may see some error messages in the terminal, but as long as the actual
 rendering looks right, you should be good to go.
 
-[wikipedia]: https://en.wikipedia.org/wiki/Vulkan_%28API%29#Hardware_compatibility
 [364.19]: http://www.nvidia.com/download/driverResults.aspx/101818/en-us
 [367.18]: http://www.nvidia.com/download/driverResults.aspx/102879/en-us
-[ppa]: https://launchpad.net/~graphics-drivers/+archive/ubuntu/ppa
-[lunarxchange]: https://vulkan.lunarg.com/signin
 [demos]: https://github.com/LWJGL/lwjgl3-demos/tree/master/src/org/lwjgl/demo/vulkan
+[lunarxchange]: https://vulkan.lunarg.com/signin
+[ppa]: https://launchpad.net/~graphics-drivers/+archive/ubuntu/ppa
+[wikipedia]: https://en.wikipedia.org/wiki/Vulkan_%28API%29#Hardware_compatibility
