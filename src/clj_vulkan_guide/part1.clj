@@ -118,7 +118,7 @@
   (glfwTerminate))
 
 (defn utf8-buffer
-  "Returns a direct ByteBuffer containing a UTF-8 encoding of s."
+  "Returns a direct ByteBuffer with a null-terminated UTF-8 encoding of s."
   [s]
   (let [buffer (BufferUtils/createByteBuffer (memLengthUTF8 s true))]
     (memUTF8 s true buffer)
