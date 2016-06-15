@@ -11,8 +11,7 @@ specific hardware currently supports Vulkan.
 
 As with the hardware, you'll probably have to Google around to find which
 drivers for your GPU support Vulkan. For instance, I'm using an NVIDIA GeForce
-GT 750M on Ubuntu 16.04, so my two options are [NVIDIA 364.19][364.19] and
-[NVIDIA 367.18][367.18], both of which are in the
+GT 750M on Ubuntu 16.04, so I want [NVIDIA 367.27][367.27] from the
 [Proprietary GPU Drivers PPA][ppa]:
 
 ```sh
@@ -91,8 +90,7 @@ java -cp lwjgl3-demos.jar org.lwjgl.demo.vulkan.InstancedSpheresDemo
 You may see some error messages in the terminal, but as long as the actual
 rendering looks right, you should be good to go.
 
-[364.19]: http://www.nvidia.com/download/driverResults.aspx/101818/en-us
-[367.18]: http://www.nvidia.com/download/driverResults.aspx/102879/en-us
+[367.27]: http://www.nvidia.com/Download/driverResults.aspx/104284/en-us
 [demos]: https://github.com/LWJGL/lwjgl3-demos/tree/master/src/org/lwjgl/demo/vulkan
 [lunarxchange]: https://vulkan.lunarg.com/signin
 [ppa]: https://launchpad.net/~graphics-drivers/+archive/ubuntu/ppa
