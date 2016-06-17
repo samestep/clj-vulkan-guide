@@ -355,7 +355,7 @@ As I'm sure you've guessed by now, the first two arguments to `glfwCreateWindow`
 are the width and height of the new window. They must be greater than zero;
 that's why this call returned `NULL`.
 
-The second argument is the window title, which supports Unicode! Hurrah!
+The third argument is the window title, which supports Unicode! Hurrah!
 
 ```clojure
 (defn empty-window [width height title]
