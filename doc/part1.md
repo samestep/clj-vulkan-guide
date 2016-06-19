@@ -1,8 +1,8 @@
 # Part 1: LWJGL and GLFW
 
-Currently, the only JVM library that provides Vulkan bindings is [LWJGL][], so
-the first thing you'll need to do is add LWJGL to your dependencies. I'm going
-to use [Boot][] instead of [Leiningen][], because it has a slick way to add
+Currently, the only JVM library that provides Vulkan bindings is [LWJGL], so the
+first thing you'll need to do is add LWJGL to your dependencies. I'm going to
+use [Boot] instead of [Leiningen], because it has a slick way to add
 dependencies at runtime:
 
 ```clojure
@@ -18,7 +18,7 @@ dependencies at runtime:
 
 I didn't include the OS X natives because OS X doesn't currently support Vulkan.
 
-LWJGL also provides bindings to [GLFW][], a utility library that we'll be using
+LWJGL also provides bindings to [GLFW], a utility library that we'll be using
 for windowing and input. But before we get into that, we need to talk about
 syntax.
 
@@ -254,7 +254,7 @@ interface (e.g. [`GLFWErrorCallback`][glfwerrorcallback],
 [`GLFWKeyCallback`][glfwkeycallback]). In our "Hello World!" example, we used
 the [`createPrint`][createprint] convenience method to create a GLFW error
 callback that prints errors to [`System/err`][system/err]. Incidentally, if
-you're using [CIDER][], [this won't work properly][println question], because
+you're using [CIDER], [this won't work properly][println question], because
 CIDER redirects [`*err*`][err] but not `System/err`. In order to see GLFW error
 messages in the REPL, we must instead create a [`PrintStream`][printstream]
 object that points to `*err*`, which is a [`PrintWriter`][printwriter].
