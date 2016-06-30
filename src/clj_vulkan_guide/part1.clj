@@ -1,5 +1,6 @@
 (ns clj-vulkan-guide.part1
-  (:require [clojure.string :as str]
+  (:require [clojure.reflect :as reflect]
+            [clojure.string :as str]
             [org.baznex.imports :as imports])
   (:import (java.io PrintStream)
            (org.apache.commons.io.output WriterOutputStream)
@@ -14,15 +15,11 @@
   respectively, in every class in classes. Every class symbol must be fully
   qualified."
   [& classes]
-  {:pre [(every? symbol? classes)
-         (not-any? namespace classes)]}
   `(do
-     ~@(for [csym classes
-             :let [c (Class/forName (name csym))]]
+     ~@(for [c classes]
          `(imports/import-static
-           ~csym
-           ~@(map (comp symbol (memfn getName))
-                  (concat (.getFields c) (.getMethods c)))))))
+           ~c
+           ~@(map :name (:members (reflect/type-reflect c)))))))
 
 (import-static-all org.lwjgl.glfw.Callbacks
                    org.lwjgl.glfw.GLFW

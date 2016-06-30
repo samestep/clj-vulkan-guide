@@ -58,20 +58,18 @@ be a problem for you, you could modify the `import-static` macro to add
 
 Now, what we really need is a way to import *all* the static fields and methods
 in a class. One way to do this is to assemble an `import-static` form with all
-the public fields and methods of a class. The `import-static` macro will
-automatically weed out non-static members, making our job easier:
+the members of a class. The `import-static` macro will automatically weed out
+stuff that doesn't make sense to import, making our job easier:
 
 ```clojure
+(require '[clojure.reflect :as reflect])
+
 (defmacro import-static-all [& classes]
-  {:pre [(every? symbol? classes)
-         (not-any? namespace classes)]}
   `(do
-     ~@(for [csym classes
-             :let [c (Class/forName (name csym))]]
+     ~@(for [c classes]
          `(imports/import-static
-           ~csym
-           ~@(map (comp symbol (memfn getName))
-                  (concat (.getFields c) (.getMethods c)))))))
+           ~c
+           ~@(map :name (:members (reflect/type-reflect c)))))))
 ```
 
 This solution isn't great, but it's good enough for our purposes.
