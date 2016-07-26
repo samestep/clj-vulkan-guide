@@ -49,7 +49,7 @@ This will create a `VulkanSDK` directory in the current working directory:
 ```sh
 VULKAN_ARCH=x86_64
 VULKAN_VERSION=1.0.21.1
-cp ~/Downloads/vulkansdk-linux-$VULKAN_ARCH-$VULKAN_VERSION.run .
+mv ~/Downloads/vulkansdk-linux-$VULKAN_ARCH-$VULKAN_VERSION.run .
 chmod +x vulkansdk-linux-$VULKAN_ARCH-$VULKAN_VERSION.run
 ./vulkansdk-linux-$VULKAN_ARCH-$VULKAN_VERSION.run
 ```
